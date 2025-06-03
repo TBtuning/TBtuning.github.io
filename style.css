@@ -145,3 +145,54 @@ a.button:hover, nav a:hover {
   background-color: #b92c38;
   color: #fff;
 }
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* lichte overlay */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-inner {
+  background-color: #1a1a1a; /* donker, ondoorzichtig */
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 0 20px #000;
+}
+
+#modal-img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.description {
+  color: #fff;
+  max-width: 400px;
+  font-size: 1.1em;
+  align-self: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}

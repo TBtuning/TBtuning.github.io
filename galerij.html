@@ -25,16 +25,55 @@
     <p>Bekijk hier enkele van onze gerealiseerde builds en klantprojecten. Elk van deze brommers is volledig door TBtuning afgesteld en opgebouwd.</p>
   </section>
 
-  <section class="gallery">
-    <div class="gallery-grid">
-      <img src="files/img/Derbi senda 80cc.jpg" alt="Derbi Senda Tuning" />
-      <img src="files/img/Derbi blok 80cc.jpg" alt="Derbi blok" />
-      <img src="files/img/Gilera typhoon.jpg" alt="Gilera Typhoon" />
-    </div>
-  </section>
+<section class="gallery">
+  <div class="gallery-grid">
+    <img src="files/img/Derbi senda 80cc.jpg" alt="Derbi Senda Tuning" data-description="Derbi Senda met 80cc setup." />
+    <img src="files/img/Derbi blok 80cc.jpg" alt="Derbi blok" data-description="Afgesteld Derbi blok met 80cc cilinder." />
+    <img src="files/img/Gilera typhoon.jpg" alt="Gilera Typhoon" data-description="Gilera Typhoon 50cc opfrisbeurtje" />
+  </div>
+</section>
+
 
   <footer>
     <p>&copy; 2025 TBtuning</p>
   </footer>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-inner" id="modal-inner">
+    <span class="close" id="modal-close">&times;</span>
+    <img id="modal-img" src="" alt="" />
+    <div id="modal-desc" class="description"></div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalDesc = document.getElementById("modal-desc");
+  const modalInner = document.getElementById("modal-inner");
+  const closeBtn = document.getElementById("modal-close");
+
+  document.querySelectorAll(".gallery-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      modalDesc.textContent = img.getAttribute("data-description");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Sluiten bij klikken buiten het modal-inner venster
+  modal.addEventListener("click", (e) => {
+    if (!modalInner.contains(e.target)) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+
 </body>
 </html>
