@@ -1,12 +1,20 @@
-/* Algemene stijl */
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* ========================
+   Basis layout & fonts
+======================== */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #0f0f0f;
   color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ========================
+   Header & navigatie
+======================== */
 header {
   background-color: #1f1f1f;
   padding: 20px;
@@ -21,21 +29,27 @@ header h1 {
 nav ul {
   list-style: none;
   padding: 0;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
   color: #f0f0f0;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: #e63946;
 }
 
+/* ========================
+   Hero / banner sectie
+======================== */
 .hero {
   background: url('brommer-banner.jpg') no-repeat center center/cover;
   padding: 100px 20px;
@@ -47,50 +61,87 @@ nav a:hover {
   color: #ffffff;
 }
 
+/* ========================
+   Hoofdsecties
+======================== */
 section {
   padding: 40px 20px;
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+  flex-grow: 1;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+section h2 {
+  color: #e63946;
+  margin-bottom: 20px;
 }
 
-.gallery img {
-  max-width: 300px;
-  border-radius: 8px;
-  border: 2px solid #e63946;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #1f1f1f;
-  font-size: 0.9rem;
-}
-
+/* ========================
+   Galerij met 3 kolommen
+======================== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+  border: 2px solid #e63946;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsief voor kleinere schermen */
+/* ========================
+   Footer (sticky bottom)
+======================== */
+footer {
+  background-color: #1f1f1f;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ========================
+   Responsiviteit
+======================== */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Knopstijl voor hyperlinks */
+a.button, nav a {
+  display: inline-block;
+  background-color: #e63946;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+a.button:hover, nav a:hover {
+  background-color: #b92c38;
+  color: #fff;
 }
