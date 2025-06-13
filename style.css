@@ -26,6 +26,21 @@ header h1 {
   color: #e63946;
 }
 
+/* ========================
+   Mobiele navigatie
+======================== */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -77,6 +92,38 @@ section h2 {
   margin-bottom: 20px;
 }
 
+section p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Inline links binnen tekst */
+.inline-link {
+  color: #e63946;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.inline-link:hover {
+  color: #ff4757;
+  text-decoration: none;
+}
+
+/* Styling voor emphasized tekst (quotes) */
+section p em {
+  color: #d0d0d0;
+  font-style: italic;
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  padding: 15px;
+  border-left: 3px solid #e63946;
+  background-color: rgba(230, 57, 70, 0.1);
+  border-radius: 5px;
+}
+
 /* ========================
    Galerij met 3 kolommen
 ======================== */
@@ -122,9 +169,91 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* Mobiele navigatie */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
   nav ul {
+    display: none;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1f1f1f;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  header {
+    position: relative;
+  }
+
+  /* Formulier aanpassingen voor mobiel */
+  .contact-form {
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Voorkomt zoom op iOS */
+  }
+
+  /* Contact buttons responsive */
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-buttons .button {
+    min-width: auto;
+    width: 100%;
+  }
+
+  /* CTA buttons responsive */
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Checkbox responsive */
+  .checkbox-group {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .checkbox-item {
+    padding: 12px 8px;
   }
 }
 
@@ -195,4 +324,362 @@ a.button:hover, nav a:hover {
   color: white;
   font-size: 32px;
   cursor: pointer;
+}
+
+/* ========================
+   Merch / Product sectie
+======================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.product-card {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  color: #e63946;
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+}
+
+.product-description {
+  color: #d0d0d0;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.product-details {
+  margin-bottom: 20px;
+}
+
+.product-details p {
+  margin: 5px 0;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+.product-price {
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.contact-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.contact-button:hover {
+  background-color: #b92c38;
+}
+
+/* ========================
+   Reviews sectie
+======================== */
+.reviews {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin: 40px auto;
+  padding: 40px 20px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.review-card {
+  background-color: #2a2a2a;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #e63946;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.15);
+}
+
+.review-stars {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.review-text {
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.review-author {
+  font-weight: bold;
+  color: #e63946;
+  font-size: 0.9rem;
+}
+
+/* ========================
+   Instagram Feed
+======================== */
+.instagram-feed {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.instagram-placeholder {
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.instagram-placeholder p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #d0d0d0;
+}
+
+/* ========================
+   Contact Formulier
+======================== */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.contact-form {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.contact-info {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #e63946;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e63946;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #b92c38;
+}
+
+/* ========================
+   Checkbox styling
+======================== */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.checkbox-item {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: normal;
+  color: #f0f0f0;
+  line-height: 24px;
+  position: relative;
+}
+
+.checkbox-item:hover {
+  background-color: rgba(230, 57, 70, 0.1);
+}
+
+.checkbox-item input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #666;
+  border-radius: 4px;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.checkbox-item span:not(.checkmark) {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+}
+
+.checkbox-item input[type="checkbox"]:checked + .checkmark {
+  background-color: #e63946;
+  border-color: #e63946;
+}
+
+.checkbox-item input[type="checkbox"]:checked + .checkmark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ========================
+   Contact buttons layout
+======================== */
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-buttons .button {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* ========================
+   Call-to-Action sectie
+======================== */
+.cta-section {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  text-align: center;
+  margin: 40px auto;
+  padding: 40px 20px;
+  border: 2px solid #e63946;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.button.primary {
+  background-color: #e63946;
+  font-size: 1.1rem;
+  padding: 15px 25px;
+}
+
+.button.secondary {
+  background-color: transparent;
+  border: 2px solid #e63946;
+  color: #e63946;
+  font-size: 1.1rem;
+  padding: 13px 25px;
+}
+
+.button.secondary:hover {
+  background-color: #e63946;
+  color: white;
 }

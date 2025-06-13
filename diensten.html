@@ -4,17 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TBtuning | Diensten</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+  <meta name="theme-color" content="#e63946">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Diensten - TBtuning</h1>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="tuning.html">Tuning</a></li>
         <li><a href="diensten.html">Diensten</a></li>
         <li><a href="galerij.html">Galerij</a></li>
+        <li><a href="merch.html">Merch</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -25,7 +30,7 @@
     <p>Hieronder vind je een overzicht van veelvoorkomende werkzaamheden bij TBtuning. Alle prijzen zijn <strong>exclusief onderdelen</strong> en <strong>indicatief</strong>. Neem contact op voor een definitieve prijsopgave.</p>
 
     <ul>
-      <li><strong>Scooter afstellen (excl. materiaal)</strong><br />
+      <li><strong>Brommer afstellen (excl. materiaal)</strong><br />
         Carburateur wordt op straat afgesteld – <em>€120 - €175</em></li>
 
       <li><strong>Cilinder monteren</strong><br />
@@ -61,13 +66,42 @@
     </ul>
 
     <p><strong>Interesse of vragen?</strong></p>
-    <a class="button" href="mailto:tbtuning.shop@gmail.com">📧 Mail ons</a>
-    <a class="button" href="https://www.instagram.com/tb.tuning/" target="_blank">📸 Instagram DM</a>
+    <div class="contact-buttons">
+      <a class="button" href="contact.html">📝 Contact Formulier</a>
+      <a class="button" href="mailto:tbtuning.shop@gmail.com">📧 Mail ons</a>
+      <a class="button" href="https://www.instagram.com/tb.tuning/" target="_blank">📸 Instagram DM</a>
+    </div>
 
+  </section>
+
+  <section class="cta-section">
+    <h2>Klaar om je brommer te laten tunen?</h2>
+    <p>Neem vandaag nog contact op voor een vrijblijvende offerte of advies. Ik help je graag verder!</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="button primary">📝 Offerte Aanvragen</a>
+      <a href="galerij.html" class="button secondary">🖼️ Bekijk Projecten</a>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 TBtuning</p>
   </footer>
+
+  <script>
+    // Mobiele navigatie
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Sluit menu bij klik op link
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navMenu.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>

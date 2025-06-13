@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TBtuning | Merch</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+  <meta name="theme-color" content="#e63946">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Merch - TBtuning</h1>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="galerij.html">Galerij</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>TBtuning Merchandise</h2>
+    <p>Laat zien dat je deel uitmaakt van de TBtuning community! Onze merchandise is gemaakt van hoogwaardige materialen en perfect voor elke tuning-liefhebber.</p>
+  </section>
+
+  <section class="merch">
+    <div class="product-grid">
+      
+      <!-- TBtuning Hoodie -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="files/img/tbtuning-hoodie.jpg" alt="TBtuning Hoodie" />
+        </div>
+        <div class="product-info">
+          <h3>TBtuning Hoodie</h3>
+          <p class="product-description">Premium hoodie met het TBtuning logo. Gemaakt van 80% katoen en 20% polyester voor optimaal comfort. Perfect voor koude dagen in de garage of op het circuit.</p>
+          <div class="product-details">
+            <p><strong>Materiaal:</strong> 80% katoen, 20% polyester</p>
+            <p><strong>Kleuren:</strong> Zwart, Grijs</p>
+            <p><strong>Maten:</strong> S, M, L, XL, XXL</p>
+          </div>
+          <div class="product-price">
+            <span class="price">€45,00</span>
+          </div>
+          <button class="contact-button">Bestellen via Contact</button>
+        </div>
+      </div>
+
+      <!-- TBtuning T-shirt -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="files/img/tbtuning-tshirt.jpg" alt="TBtuning T-shirt" />
+        </div>
+        <div class="product-info">
+          <h3>TBtuning T-shirt</h3>
+          <p class="product-description">Comfortabel T-shirt met strak TBtuning design. Ideaal voor warme dagen of onder je motorkleding. Duurzame print die niet vervaagt.</p>
+          <div class="product-details">
+            <p><strong>Materiaal:</strong> 100% katoen</p>
+            <p><strong>Kleuren:</strong> Zwart, Wit, Rood</p>
+            <p><strong>Maten:</strong> S, M, L, XL, XXL</p>
+          </div>
+          <div class="product-price">
+            <span class="price">€25,00</span>
+          </div>
+          <button class="contact-button">Bestellen via Contact</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Bestellen</h2>
+    <p>Interesse in onze merchandise? Neem contact met ons op via de <a href="contact.html" class="button">contactpagina</a> en vermeld welk product, maat en kleur je wilt bestellen. We nemen dan zo snel mogelijk contact met je op voor de betaling en verzending.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TBtuning. Alle rechten voorbehouden.</p>
+  </footer>
+
+  <script>
+    // Mobiele navigatie
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Sluit menu bij klik op link
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navMenu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

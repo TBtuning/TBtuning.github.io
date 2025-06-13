@@ -4,17 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TBtuning | Contact</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+  <meta name="theme-color" content="#e63946">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Contact - TBtuning</h1>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="tuning.html">Tuning</a></li>
         <li><a href="diensten.html">Diensten</a></li>
         <li><a href="galerij.html">Galerij</a></li>
+        <li><a href="merch.html">Merch</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -22,29 +27,128 @@
 
   <section>
     <h2>Neem contact op met TBtuning</h2>
-    <p>Wil je jouw brommer laten tunen of heb je vragen over onderdelen, levertijd of prijzen? Wij staan voor je klaar. Je kunt ons altijd een bericht sturen via e-mail of Instagram. Wij reageren meestal binnen 24 uur.</p>
-    
-    <h3>📧 E-mail</h3>
-    <p>Voor algemene vragen, bestellingen of advies:<br />
-    <a href="mailto:tbtuning.shop@gmail.com">tbtuning.shop@gmail.com</a></p>
+    <p>Wil je jouw brommer laten tunen of heb je vragen over onderdelen, levertijd of prijzen? Vul het formulier in of stuur ons een bericht via e-mail of Instagram. Wij reageren meestal binnen 24 uur.</p>
 
-    <h3>📱 Instagram</h3>
-    <p>Volg onze projecten en stuur ons een DM via:<br />
-    <a href="https://www.instagram.com/tb.tuning/" target="_blank">@tb.tuning</a></p>
+    <div class="contact-container">
+      <div class="contact-form">
+        <h3>📝 Contact Formulier</h3>
+        <form action="https://formspree.io/f/xnnvderd" method="POST">
+          <div class="form-group">
+            <label for="name">Naam *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
 
-    <h3>🕒 Openingstijden</h3>
-    <ul>
-      <li>Ma – Vr: 10:00 – 18:00</li>
-      <li>Za: 12:00 – 16:00</li>
-      <li>Zo: Gesloten</li>
-    </ul>
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
 
-    <h3>📍 Locatie</h3>
-    <p>TBtuning is gevestigd in Friesland, Gorredijk. We werken op afspraak. Exact adres ontvang je bij bevestiging van je afspraak of bestelling.</p>
+          <div class="form-group">
+            <label for="phone">Telefoonnummer</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="moped">Brommer merk/model</label>
+            <input type="text" id="moped" name="moped" placeholder="Bijv. Derbi Senda, Yamaha DT50">
+          </div>
+
+          <div class="form-group">
+            <label>Type dienst(en) - selecteer alles wat van toepassing is:</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="tuning">
+                <span class="checkmark"></span>
+                <span>Brommer tuning/afstellen</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="cilinder">
+                <span class="checkmark"></span>
+                <span>Cilinder monteren</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="uitlaat">
+                <span class="checkmark"></span>
+                <span>Uitlaat monteren</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="onderhoud">
+                <span class="checkmark"></span>
+                <span>Onderhoudsbeurt</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="reparatie">
+                <span class="checkmark"></span>
+                <span>Reparatie/schroefdraad herstellen</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="advies">
+                <span class="checkmark"></span>
+                <span>Advies/offerte</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="merch">
+                <span class="checkmark"></span>
+                <span>Merchandise bestelling</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="services[]" value="anders">
+                <span class="checkmark"></span>
+                <span>Anders (vermeld in bericht)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Bericht *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Beschrijf je vraag of wat je wilt laten doen..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Verstuur Bericht</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>📧 Direct Contact</h3>
+        <p>Voor algemene vragen, bestellingen of advies:<br />
+        <a href="mailto:tbtuning.shop@gmail.com">tbtuning.shop@gmail.com</a></p>
+
+        <h3>📱 Instagram</h3>
+        <p>Volg onze projecten en stuur ons een DM via:<br />
+        <a href="https://www.instagram.com/tb.tuning/" target="_blank">@tb.tuning</a></p>
+
+        <h3>🕒 Openingstijden</h3>
+        <ul>
+          <li>Ma – Vr: 10:00 – 18:00</li>
+          <li>Za: 12:00 – 16:00</li>
+          <li>Zo: Gesloten</li>
+        </ul>
+
+        <h3>📍 Locatie</h3>
+        <p>TBtuning is gevestigd in Friesland, Gorredijk. We werken op afspraak. Exact adres ontvang je bij bevestiging van je afspraak of bestelling.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 TBtuning. Alle rechten voorbehouden.</p>
   </footer>
+
+  <script>
+    // Mobiele navigatie
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Sluit menu bij klik op link
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navMenu.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>

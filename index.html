@@ -4,17 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TBtuning | Home</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+  <meta name="theme-color" content="#e63946">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>TBtuning</h1>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="tuning.html">Tuning</a></li>
         <li><a href="diensten.html">Diensten</a></li>
         <li><a href="galerij.html">Galerij</a></li>
+        <li><a href="merch.html">Merch</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -26,13 +31,86 @@
   </section>
 
   <section>
-    <h2>Over TBtuning</h2>
-    <p>TBtuning is ontstaan uit pure passie voor snelheid en techniek. We zijn gespecialiseerd in het tunen van schakelbrommers zoals Derbi, Yamaha DT, Beta en meer. Of je nu zoekt naar betere prestaties, looks of geluid – bij ons ben je aan het juiste adres.</p>
-    <p>Met jarenlange ervaring in motorsport en tuning zorgen wij ervoor dat jouw setup perfect is afgesteld. Elk project krijgt bij ons persoonlijke aandacht.</p>
+    <h2>Het verhaal achter TBtuning</h2>
+    <p>Het begon allemaal in een kleine garage in Friesland, waar een jonge tuning-enthousiast zijn eerste Derbi Senda uit elkaar haalde. Wat begon als nieuwsgierigheid naar hoe een brommer werkt, groeide uit tot een obsessie met snelheid, geluid en perfectie.</p>
+
+    <p>Na talloze uren experimenteren, vallen en opstaan, ontstonden de eerste echte successen. Vrienden begonnen hun brommers langs te brengen met de vraag: "Kun jij hier ook wat meer power uit halen?" En zo werd een hobby langzaam een passie, en die passie werd uiteindelijk TBtuning.</p>
+
+    <p>Met een bult aan ervaring opgedaan door jarenlang sleutelen, testen en perfectioneren, ben ik gespecialiseerd geraakt in het tunen van schakelbrommers zoals Derbi, Yamaha DT, Beta en meer. Elk project krijgt dezelfde aandacht en passie als die allereerste Senda. Je kunt mijn <a href="galerij.html" class="inline-link">gerealiseerde projecten bekijken in de galerij</a>, waar je ziet hoe ik van standaard brommers echte beesten maak.</p>
+
+    <p>Of je nu op zoek bent naar meer vermogen voor het circuit, een agressievere sound, of gewoon wilt dat je brommer er strak uitziet – ik begrijp wat je zoekt. Bekijk mijn <a href="diensten.html" class="inline-link">diensten en tarieven</a> om te zien hoe ik jouw brommer kan transformeren.</p>
+
+    <p>Wil je deel uitmaken van de TBtuning community? Check dan de <a href="merch.html" class="inline-link">merchandise collectie</a> en laat zien dat je een echte tuning-liefhebber bent. Voor vragen of om een afspraak te maken, kun je altijd <a href="contact.html" class="inline-link">contact opnemen</a>.</p>
+
+    <p><em>Van garage-hobby tot ervaren tuner – de passie voor snelheid en perfectie blijft hetzelfde.</em></p>
+  </section>
+
+  <section class="reviews">
+    <h2>Wat klanten zeggen</h2>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Mijn Derbi Senda is compleet getransformeerd! De setup die TBtuning heeft gemaakt is perfect afgesteld. Echt vakwerk!"</p>
+        <div class="review-author">- Mike, Derbi Senda 80cc</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Super tevreden met het werk aan mijn DT. Goede communicatie, eerlijke prijzen en het resultaat is geweldig. Aanrader!"</p>
+        <div class="review-author">- Lisa, Yamaha DT 50</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Persoonlijke aanpak en echt passie voor het vak. Mijn brommer loopt nu als een zonnetje. Bedankt TBtuning!"</p>
+        <div class="review-author">- Jordi, Beta RR 50</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="instagram-feed">
+    <h2>Volg ons op Instagram</h2>
+    <p>Bekijk onze nieuwste projecten en behind-the-scenes content op <a href="https://www.instagram.com/tb.tuning/" target="_blank" class="inline-link">@tb.tuning</a></p>
+    <div id="instagram-container">
+      <!-- Instagram feed wordt hier geladen -->
+      <div class="instagram-placeholder">
+        <p>📸 Laad onze Instagram feed...</p>
+        <a href="https://www.instagram.com/tb.tuning/" target="_blank" class="button">Bekijk op Instagram</a>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 TBtuning. Alle rechten voorbehouden.</p>
   </footer>
+
+  <script>
+    // Mobiele navigatie
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Sluit menu bij klik op link
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navMenu.classList.remove('show');
+      }
+    });
+
+    // Instagram feed simulatie (vervang later met echte API)
+    function loadInstagramFeed() {
+      const container = document.getElementById('instagram-container');
+      // Voor nu tonen we een placeholder
+      // Later kun je hier een echte Instagram API integratie toevoegen
+    }
+
+    // Laad Instagram feed wanneer pagina geladen is
+    document.addEventListener('DOMContentLoaded', loadInstagramFeed);
+  </script>
 </body>
 </html>
